@@ -69,8 +69,12 @@ public class DLL<T> {
             while(head!=e1) {
                 head = head.next;
             }
+            head.previous();
         while (tmp!=e2)
                 tmp = tmp.next;
+            tmp.next;
+            tmp.previous=head;
+
         head.next = tmp;
     }
 }
