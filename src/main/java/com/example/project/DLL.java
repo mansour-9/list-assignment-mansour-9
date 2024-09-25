@@ -1,11 +1,16 @@
-package com.example.project;
+import java.util.Comparator;
 
 public class DLL<T> {
-	private DLLNode<T> head;
-	private DLLNode<T> current;
+    private DLLNode<T> head;
+    private DLLNode<T> current;
+    private Comparator<T> comparator;
 
     public DLL() {
         head = current = null;
+    }
+    public DLL(Comparator<T> comparator) {
+        head = current = null;
+        this.comparator = comparator;
     }
     public boolean empty() {
         return head == null;
@@ -52,12 +57,12 @@ public class DLL<T> {
         if(current == head) {
             head = head.next;
             if(head != null)
-               head.previous = null;
+                head.previous = null;
         }
         else {
             current.previous.next = current.next;
             if(current.next != null)
-               current.next.previous = current.previous;
+                current.next.previous = current.previous;
         }
         if(current.next == null)
             current = head;
@@ -65,18 +70,41 @@ public class DLL<T> {
             current = current.next;
     }
     public void removeBetween(T e1, T e2) {
-            if(empty()) {
-            return;
+        if (empty()) {
+            return; // No nodes to remove
         }
-        DLLNode<T> tmp = head;
-         while(tmp != e2) {
-             tmp = tmp.next;
-         }
-         current=head;
-         while (current.next != e1){
-             current=current.next;
-         }
-         current.next = tmp;
-         tmp.previous = current;
+
+        DLLNode<T> node = head;
+
+        // Traverse the list and remove nodes with data between e1 and e2
+        while (node != null) {
+            // Check if the node's data is between e1 and e2
+            if (comparator.compare(node.data, e1) > 0 && comparator.compare(node.data, e2) < 0) {
+                // Remove the node
+                DLLNode<T> nextNode = node.next; // Store next node for iteration
+
+                // Update the previous node's next link
+                if (node.previous != null) {
+                    node.previous.next = node.next;
+                } else {
+                    // If we're removing the head, update the head reference
+                    head = node.next;
+                }
+
+                // Update the next node's previous link
+                if (node.next != null) {
+                    node.next.previous = node.previous;
+                }
+
+                // Move to the next node
+                node = nextNode;
+            } else {
+                // Move to the next node if no removal
+                node = node.next;
+            }
+        }
+
+        // After removing, set the current node to head
+        current = head;
     }
 }
