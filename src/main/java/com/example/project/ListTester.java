@@ -1,41 +1,34 @@
 package com.example.project;
 
-public static <T> void circularLeftShift(DLL<T> list, int n) {
-    if (list.empty()) {
-        return; 
-    }
-    int size = 0;
-    list.findFirst();
-    while (!list.last()) {
-        size++;
-        list.findNext();
-    }
-    size++; 
-    n = n % size;
-    if (n == 0) {
-        return; 
-    }
+public static <T> void circularLeftShift(List<T> list, int n) {
     for (int i = 0; i < n; i++) {
         list.findFirst(); 
-        T firstElement = list.retrieve(); 
-        for (int j = 0; j < size - 1; j++) {
-            list.update(list.retrieveNext()); 
-            list.findNext();
-        }      
-        list.update(firstElement);
+        T elem = list.retrieve(); 
+        list.remove();
+        
+        while (!list.last()) {
+            list.findNext(); 
+        }
+        
+        list.insert(elem); 
     }
 }
-   public static <T> void reverseCopy(DLL<T> l1, DLL<T> l2) {
+
+  public static <T> void reverseCopy(DoubleLinkedList<T> l1, DoubleLinkedList<T> l2) {
     if (l1.empty()) 
         return;
-    l1.findLast();
-    while (true) {
+    
+    while (!l1.last()) 
+        l1.findNext();
+    
+    while (!l1.first()) {
         l2.insert(l1.retrieve());
-        if (l1.first()) {
-            break;
-        }   
         l1.findPrevious();
     }
+    
+    l2.insert(l1.retrieve());
+}
+
 }
 
 
