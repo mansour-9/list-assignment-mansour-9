@@ -58,7 +58,7 @@ public class LinkedList<T> implements List<T>{
 return mfe ;
 }
   public T mostFrequentElement() {
-    T mfe = null; // Most frequent element
+    T mfe = null; 
     int max = 0;
     Node<T> p = head;
 
