@@ -54,30 +54,25 @@ public class LinkedList<T> implements List<T>{
             current = current.next;
         }
     }
-    public T mostFrequentElement() {
-        int countA=0,countB=0,countC=0,countD=0,countE=0;
-        Node<T> temp=head;
-        while(temp.next!=null) {
-            switch (((char)temp.data)) {
-                case 'A':countA++;
-                case 'B':countB++;
-                case 'C':countC++;
-                case 'D':countD++;
-                case 'E':countE++;
-                default:break;
-            }
-        }
+    pub l ic T mostFrequentElement () {
+T mfe = nu l l ;
+in t max = 0;
+Node <T > p = head ;
+wh i le ( p != nu l l ) {
+Node <T > q = p ;
+in t count = 0;
+wh i le ( q != nu l l ) {
+i f ( q . data . equals ( p . data ) )
+count ++;
+q = q . next ;
+}
+i f ( count > max ) {
+max = count ;
+mfe = p . data ;
+}
+p = p . next ;
+}
+return mfe ;
+}
 
-        if (countB > countA && countB >= countC && countB >= countD && countB >= countE) {
-            return (T) Character.valueOf('B');
-        } else if (countC > countA && countC > countB && countC >= countD && countC >= countE) {
-            return (T) Character.valueOf('C');
-        } else if (countA >= countB && countA >= countC && countA >= countD && countA >= countE) {
-            return (T) Character.valueOf('A');
-        } else if (countD >= countA && countD >= countB && countD >= countC && countD >= countE) {
-            return (T) Character.valueOf('D');
-        } else {
-            return (T) Character.valueOf('E');
-        }
-    }
 }
