@@ -54,25 +54,36 @@ public class LinkedList<T> implements List<T>{
             current = current.next;
         }
     }
-    pub l ic T mostFrequentElement () {
-T mfe = nu l l ;
-in t max = 0;
-Node <T > p = head ;
-wh i le ( p != nu l l ) {
-Node <T > q = p ;
-in t count = 0;
-wh i le ( q != nu l l ) {
-i f ( q . data . equals ( p . data ) )
-count ++;
-q = q . next ;
-}
-i f ( count > max ) {
-max = count ;
-mfe = p . data ;
-}
-p = p . next ;
-}
+	
 return mfe ;
 }
+  public T mostFrequentElement() {
+    T mfe = null; // Most frequent element
+    int max = 0;
+    Node<T> p = head;
+
+    while (p != null) {
+        Node<T> q = p;
+        int count = 0;
+
+        while (q != null) {
+            if (q.data.equals(p.data)) {
+                count++;
+            }
+            q = q.next;
+        }
+
+        if (count > max) {
+            max = count;
+            mfe = p.data;
+        }
+
+        p = p.next;
+    }
+
+    return mfe;
+}
+
+
 
 }
