@@ -69,42 +69,19 @@ public class DLL<T> {
         else
             current = current.next;
     }
-    public void removeBetween(T e1, T e2) {
-        if (empty()) {
-            return; // No nodes to remove
-        }
-
-        DLLNode<T> node = head;
-
-        // Traverse the list and remove nodes with data between e1 and e2
-        while (node != null) {
-            // Check if the node's data is between e1 and e2
-            if (comparator.compare(node.data, e1) > 0 && comparator.compare(node.data, e2) < 0) {
-                // Remove the node
-                DLLNode<T> nextNode = node.next; // Store next node for iteration
-
-                // Update the previous node's next link
-                if (node.previous != null) {
-                    node.previous.next = node.next;
-                } else {
-                    // If we're removing the head, update the head reference
-                    head = node.next;
-                }
-
-                // Update the next node's previous link
-                if (node.next != null) {
-                    node.next.previous = node.previous;
-                }
-
-                // Move to the next node
-                node = nextNode;
-            } else {
-                // Move to the next node if no removal
-                node = node.next;
-            }
-        }
-
-        // After removing, set the current node to head
-        current = head;
-    }
+  public  void removeBetween ( T e1 , T e2 ) {
+            Node <T> p = head ;
+       while (( p != null ) && (! p.data.equals( e1 )))
+                p = p.next ;
+                 if ( p == null )
+                        return;
+                Node <T> q = p.next ;
+            while (( q != null ) && (! q.data.equals ( e2 ) ) )
+                       q = q.next ;
+                     if ( q == null )
+                              return;
+                      p.next = q ;
+                    q.previous = p ;
+                       current = head ;
+}
 }
