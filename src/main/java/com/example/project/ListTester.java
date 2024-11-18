@@ -27,8 +27,9 @@ public static <T> void circularLeftShift(List<T> list, int n) {
     }
     
     l2.insert(l1.retrieve());
-}
 
-}
+  }
+
+
 
 
