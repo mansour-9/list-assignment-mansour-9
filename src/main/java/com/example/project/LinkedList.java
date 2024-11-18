@@ -64,26 +64,27 @@ public class LinkedList<T> implements List<T> {
         }
     }
 
-    public T mostFrequentElement() {
-        T mfe = null;
-        int max = 0;
-        Node<T> p = head;
-        while (p != null) {
-            Node<T> q = p;
-            int count = 0;
-            while (q != null) {
-                if (q.data.equals(p.data))
-                    count++;
-                q = q.next;
-            }
-            if (count > max) {
-                max = count;
-                mfe = p.data;
-            }
-            p = p.next;
+   public T mostFrequentElement() {
+    T mfe = null;
+    int max = 0;
+    Node<T> p = head;
+    while (p != null) {
+        Node<T> q = p;
+        int count = 0;
+        while (q != null) {
+            if (q.data.equals(p.data))
+                count++;
+            q = q.next;
         }
-        return mfe;
+        if (count > max) {
+            max = count;
+            mfe = p.data;
+        }
+        p = p.next;
     }
+    return mfe;
+}
+
 
 
 }
