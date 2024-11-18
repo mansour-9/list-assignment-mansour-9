@@ -140,21 +140,26 @@ public class DLL<T> {
         else
             current = current.next;
     }
-  public  void removeBetween ( T e1 , T e2 ) {
-            Node <T> p = head ;
-       while (( p != null ) && (! p.data.equals( e1 )))
-                p = p.next ;
-                 if ( p == null )
-                        return;
-                Node <T> q = p.next ;
-            while (( q != null ) && (! q.data.equals ( e2 ) ) )
-                       q = q.next ;
-                     if ( q == null )
-                              return;
-                      p.next = q ;
-                    q.previous = p ;
-                       current = head ;
-}
+ public void removeBetween(T e1, T e2) {
+	    
+       DLLNode<T> a =head;
+      
+       while((a!=null)&&!(a.data.equals(e1))){
+        a=a.next;
+       }
+	if(a==null)
+		return;
+       DLLNode<T> b =a.next;
+       while((b!=null)&&!(b.data.equals(e2))){
+        b=b.next;
+       }
+	    if(b==null)
+		    return;
+       a.next=b;
+        b.previous=a;
+        current=head;
+
+    }
 }
 
 
