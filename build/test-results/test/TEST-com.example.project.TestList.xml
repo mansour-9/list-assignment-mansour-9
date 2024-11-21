@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.project.TestList" tests="17" skipped="0" failures="0" errors="0" timestamp="٢٠٢٤-١١-٢١T٠٨:٣٩:٤٥" hostname="LAPTOP-657FUQM7" time="0.06">
+  <properties/>
+  <testcase name="testRemoveBetween1()" classname="com.example.project.TestList" time="0.017"/>
+  <testcase name="testRemoveBetween2()" classname="com.example.project.TestList" time="0.001"/>
+  <testcase name="testRemoveBetween3()" classname="com.example.project.TestList" time="0.001"/>
+  <testcase name="testRemoveBetween4()" classname="com.example.project.TestList" time="0.001"/>
+  <testcase name="testMostFrequentElement1()" classname="com.example.project.TestList" time="0.005"/>
+  <testcase name="testMostFrequentElement2()" classname="com.example.project.TestList" time="0.001"/>
+  <testcase name="testMostFrequentElement3()" classname="com.example.project.TestList" time="0.001"/>
+  <testcase name="testMostFrequentElement4()" classname="com.example.project.TestList" time="0.001"/>
+  <testcase name="testMostFrequentElement5()" classname="com.example.project.TestList" time="0.001"/>
+  <testcase name="testCircularLeftShift1()" classname="com.example.project.TestList" time="0.002"/>
+  <testcase name="testCircularLeftShift2()" classname="com.example.project.TestList" time="0.001"/>
+  <testcase name="testCircularLeftShift3()" classname="com.example.project.TestList" time="0.002"/>
+  <testcase name="testCircularLeftShift4()" classname="com.example.project.TestList" time="0.001"/>
+  <testcase name="testReverseCopy1()" classname="com.example.project.TestList" time="0.001"/>
+  <testcase name="testReverseCopy2()" classname="com.example.project.TestList" time="0.001"/>
+  <testcase name="testReverseCopy3()" classname="com.example.project.TestList" time="0.001"/>
+  <testcase name="testReverseCopy4()" classname="com.example.project.TestList" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
