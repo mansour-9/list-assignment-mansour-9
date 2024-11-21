@@ -95,15 +95,15 @@ public class DLL<T> {
     public static <T> void reverseCopy(DLL<T> list1, DLL<T> list2) {
         DLLNode<T> temp = list1.head;
 
-        // First, find the last node in list1
+
         while (temp != null && temp.next != null) {
             temp = temp.next;
         }
 
-        // Traverse list1 in reverse order and insert elements into list2
+
         while (temp != null) {
-            list2.insert(temp.data);  // Insert elements in reverse order
-            temp = temp.previous;     // Move to the previous node
+            list2.insert(temp.data);
+            temp = temp.previous;
         }
     }
 
