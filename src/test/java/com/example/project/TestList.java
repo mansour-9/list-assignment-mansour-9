@@ -200,7 +200,7 @@ public class TestList {
       list1.insert('B');
       list1.insert('C');
       list1.insert('D');
-      ListTester.reverseCopy(list1, list2);
+      DLL.reverseCopy(list1, list2);
       list2.findFirst();
       assertEquals('D', list2.retrieve());
       list2.findNext();
